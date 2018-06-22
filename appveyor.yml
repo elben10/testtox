@@ -14,8 +14,8 @@ install:
 test_script:
   - C:\Python36\scripts\tox
 
-# after_test:
-#   - C:\Python36\scripts\tox -e coverage,codecov
+after_test:
+  - C:\Python36\scripts\tox -e coverage,codecov
 
 cache:
   - '%LOCALAPPDATA%\pip\cache'

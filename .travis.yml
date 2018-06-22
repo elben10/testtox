@@ -20,7 +20,6 @@ env:
 
 before_install:
  - pyenv versions
- - echo $py
 
 install:
   - pip install -U six
@@ -28,8 +27,6 @@ install:
 
 script:
   - tox
-  - echo $py
-  - echo $PYENV
 
-# after_success:
-# - if [[ $TOXENV == "py" ]]; then tox -e coverage,codecov; fi
+after_success:
+- if [[ $TOXENV == "py" ]]; then tox -e coverage,codecov; fi
